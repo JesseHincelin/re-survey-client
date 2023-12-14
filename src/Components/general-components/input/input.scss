@@ -1,0 +1,19 @@
+@use "../../../Styles/mixins" as mxn;
+
+.field {
+  @include mxn.flex(column);
+
+  & .label {
+    color: var(--second-color);
+    font-size: var(--small-font);
+  }
+
+  & .input {
+    border: none;
+    border-radius: 16px;
+    padding: 4px 24px;
+    min-width: 250px;
+    background-color: var(--background-color);
+    box-shadow: var(--boxshadow-basic-colorless) var(--boxshadow-color);
+  }
+}

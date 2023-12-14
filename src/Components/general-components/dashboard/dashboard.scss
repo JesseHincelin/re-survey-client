@@ -1,0 +1,20 @@
+@use "../../../Styles/mixins" as mxn;
+
+.dashboard {
+  min-height: 100%;
+  @include mxn.flex(column);
+  flex: 1 0;
+
+  &__buttons {
+    @include mxn.flex(column);
+    flex: 1 0;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    & li {
+      & .button {
+        @include mxn.dashboard-button;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@use "../../Styles/mixins" as mxn;
+
+.global__container {
+  @include mxn.flex(column);
+  flex: 1 0;
+}

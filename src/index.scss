@@ -1,0 +1,22 @@
+@use "./Styles/gardevoir";
+@use "./Styles/global";
+@use "./Styles/variables";
+
+html {
+  // Scrollbar style
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--white);
+    box-shadow: inset 0 0 3px 1px var(--boxshadow-color);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--dark-grey);
+    border-radius: var(--small-radius);
+    box-shadow: 0 0 3px 1px var(--boxshadow-color);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--darker-grey);
+  }
+}

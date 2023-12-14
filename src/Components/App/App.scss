@@ -1,0 +1,50 @@
+@use "../../Styles/mixins" as mxn;
+
+.App {
+  @include mxn.flex(column);
+  background-color: var(--fourth-color);
+  flex: 1 0;
+  & .section {
+    @include mxn.flex(column);
+    justify-content: center;
+    align-items: center;
+    padding: 24px 8px;
+    gap: 8px;
+
+    &__form {
+      @include mxn.flex(column);
+      gap: 8px;
+      & .button {
+        @include mxn.form-button;
+        align-self: center;
+      }
+    }
+    & .redirection-link {
+      @include mxn.flex(column);
+      @include mxn.navigation-link;
+      align-items: center;
+    }
+  }
+  & .article {
+    @include mxn.flex(column);
+    @include mxn.navigation-link;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }

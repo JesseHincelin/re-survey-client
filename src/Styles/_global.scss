@@ -1,0 +1,83 @@
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1350px;
+  padding: 0 var(--container-padding);
+}
+
+body {
+  line-height: 1.618;
+  font-size: calc(1.2rem + 0.6vmin);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  & #root {
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blue_theme {
+    // need to establish a color theme for the light theme (by default)
+    --main-color: #113158;
+    --second-color: #48617f;
+    --third-color: #118df0;
+    --fourth-color: #bae0ff;
+    --fith-color: #fde5d4;
+    --background-color: rgb(255, 255, 255);
+    --text-color: rgba(0, 0, 0, 0.86);
+    --text-color-main: #113158;
+    --text-color-negative: rgba(255, 255, 255, 0.86);
+  }
+}
+
+*[class*="adaptative-img"] {
+  position: relative;
+}
+
+*[class*="adaptative-img"] > img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: 100%;
+  position: absolute;
+}
+
+.adaptative-img--cover > img {
+  object-fit: cover;
+}
+
+.adaptative-img--contain > img {
+  object-fit: contain;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

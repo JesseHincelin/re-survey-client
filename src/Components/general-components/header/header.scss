@@ -1,0 +1,42 @@
+@use "../../../Styles/mixins" as mxn;
+
+.header {
+  @include mxn.flex;
+  padding: 16px 24px 16px 48px;
+  gap: 8px;
+  background-color: var(--main-color);
+  align-items: baseline;
+  align-content: center;
+  min-height: var(--header-height);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-width: 100%;
+  & .title {
+    color: var(--text-color-negative);
+    font-size: calc(4.2rem + 0.6vmin);
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -17px;
+      height: 80px;
+      width: 80px;
+      border-radius: 40px;
+      box-shadow: 0 0 2px 2px var(--third-color);
+    }
+  }
+  & .subtitle {
+    color: var(--third-color);
+    font-size: var(--very-big-font);
+    flex: 1 0;
+  }
+
+  & .user__welcome {
+    align-self: flex-end;
+    font-weight: 500;
+    color: var(--text-color-negative);
+    transform: translateY(20px);
+  }
+}

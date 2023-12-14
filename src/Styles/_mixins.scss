@@ -1,0 +1,118 @@
+@mixin flex($direction: "row", $wrap: "wrap") {
+  display: flex;
+  flex-direction: #{$direction};
+  flex-wrap: #{$wrap};
+}
+
+@mixin grow($val: 1) {
+  flex-grow: #{$val};
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+
+@mixin box {
+  transform: translateY(50px);
+  box-shadow: 0 0 0 3px var(--primary-color);
+  border-radius: var(--radius);
+  background: var(--primary-color);
+  color: var(--text-color);
+  min-width: 300px;
+  h2 {
+    border-radius: var(--radius) var(--radius) 0 0;
+    box-shadow: 0 0 0 1px var(--primary-color);
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+@mixin button($active: true) {
+  border: none;
+  border-radius: var(--big-radius);
+  padding: 0 24px;
+  line-height: 1.5;
+  transition: var(--transition-one);
+  font-size: var(--big-font);
+  cursor: pointer;
+  @if $active {
+    color: var(--primary-color);
+    background: var(--text-color);
+    font-weight: 700;
+    box-shadow: inset 0 0 0 2px var(--primary-color);
+  } @else {
+    color: var(--text-color);
+    background: var(--primary-color);
+    font-weight: 700;
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 0 2px var(--primary-color);
+      background: var(--background-color);
+      color: var(--primary-color);
+    }
+  }
+}
+
+@mixin dashboard-button {
+  border: none;
+  border-radius: var(--asym-radius);
+  line-height: 1.5;
+  padding: 8px 32px;
+  min-width: 250px;
+  text-align: center;
+  transition: var(--transition-one);
+  font-size: var(--huge-font);
+  font-weight: 600;
+  box-shadow: var(--boxshadow-basic-colorless) var(--boxshadow-color);
+  cursor: pointer;
+  color: var(--text-color-negative);
+  background: var(--main-color);
+  &:hover,
+  &:focus {
+    color: var(--text-color-main);
+    background: var(--background-color);
+    box-shadow: inset 0 0 0 2px var(--main-color);
+    outline: none;
+  }
+}
+@mixin form-button {
+  border: none;
+  border-radius: var(--big-radius);
+  line-height: 1.5;
+  padding: 0 24px;
+  transition: var(--transition-one);
+  font-size: var(--big-font);
+  box-shadow: var(--boxshadow-basic-colorless) var(--boxshadow-color);
+  cursor: pointer;
+  color: var(--text-color-negative);
+  background: var(--main-color);
+  &:hover,
+  &:focus {
+    color: var(--text-color-main);
+    background: var(--background-color);
+    box-shadow: inset 0 0 0 2px var(--main-color);
+    outline: none;
+  }
+}
+
+@mixin navigation-link {
+  a {
+    color: var(--third-color);
+    transition: var(--transition-one);
+    position: relative;
+  }
+  a:before {
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: var(--third-color);
+    position: absolute;
+    top: 100%;
+    transform-origin: left;
+    transition: var(--transition-one);
+  }
+
+  a:hover:before {
+    width: 100%;
+  }
+}
